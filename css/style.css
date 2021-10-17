@@ -1,0 +1,415 @@
+* {
+    /* padding: 0; */
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Oswald', sans-serif;
+    /* rem */
+    /* nếu set font-size ở đây: */
+    /* 1rem = 14px */
+    font-size: 14px;
+    font-weight: 300;
+
+    /* nếu không set: 1rem = 16px */
+}
+
+/* HEADER */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+    padding: 20px 0;
+}
+
+.header__content .header__logo {
+    text-decoration: none;
+}
+
+.header__content ul a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header__content li {
+    list-style: none;
+    display: inline;
+}
+
+.header__content {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__content a {
+    color: white;
+    font-size: 0.7rem;
+}
+
+.header__content .header__logo {
+    font-size: 1.8rem;
+}
+
+.header__content li {
+    margin: 5px;
+}
+
+.header__content .active {
+    color: #e62b4a;
+}
+
+.header__content li a {
+    transition: all .5s;
+}
+
+.header__content li:hover a {
+    color: #e62b4a;
+}
+
+/* END HEADER */
+
+/* CAROUSEL */
+.carousel {
+    background-image: url(../assets/img/home_slider.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__content {
+    text-align: center;
+    color: white;
+}
+
+.carousel__content p {
+    font-size: 1.2rem;
+}
+
+.carousel__content h1 {
+    font-size: 3rem;
+    line-height: 50px;
+}
+
+.carousel__content button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    background-color: #e62b4a;
+    border: 1px solid #e62b4a;
+    color: white;
+    font-size: 0.6rem;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.carousel__content button:hover {
+    background-color: #AF2227;
+}
+
+.carousel__content .carousel__scroll {
+    margin-top: 30px;
+}
+/* END CAROUSEL */
+
+/* SERVICE */
+.service {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0;
+}
+
+.service__content {
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service__content .service__title p:first-child {
+    color: #e62b4a;
+    font-size: 0.7rem;
+}
+
+.service__content .service__title h1 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.service__content .service__title p:last-child {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.service__slider .slick-slider .item {
+    background-color: #fff;
+    margin: 5px;
+    color: #888;
+    padding: 40px 0;
+    position: relative;
+}
+
+.service__slider .item i {
+    font-size: 2rem;
+}
+
+.service__slider .item p {
+    font-size: 0.65rem;
+}
+
+.service__slider .slick-slider .item::after {
+    /* bắt buộc phải có content */
+    content: '';
+    background-color: #e62b4a;
+    display: block;
+    height: 0;
+    width: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all .5s;
+}
+
+.service__slider .slick-slider .item:hover::after{
+    height: 100%;
+}
+
+.slick-slider .slick-dots button::before {
+    color: #fff;
+    font-size: 0.6rem;
+}
+
+.slick-slider .slick-dots li.slick-active button::before {
+    color: #e62b4a;
+}
+
+.slick-slider .slick-dots li {
+    margin: 0;
+}
+/* END SERVICE */
+
+/* SHOWCASE */
+.showCase {
+    padding: 50px 0;
+}
+
+.showCase__content {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.showCase__content .showCase__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.showCase__content .showCase__title p:first-child {
+    color: #888;
+    font-size: 0.7rem;
+}
+
+.showCase__content .showCase__title h1 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.showCase__content .showCase__title p:last-child {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 20px;
+} 
+.showCase__list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px; /* tao khoan cach giua cac item*/
+    /* fr: fraction (phan so) */
+    /* grid-template-columns: repeat(3, 33.33%); */
+    /* grid-template-columns: 33.33% 33.33% 33.33%; */
+}
+.showCase__item {
+    height: 250px;
+    position: relative;
+}
+.showCase__item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(95%)/* taod do trang den*/ contrast(40%) /* tạo lớp phủ mờ
+    */;
+}
+.showCase__overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(250, 87, 46, .8) ;
+    filter: contrast(40%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .5s;
+
+}
+.showCase__overlay .showCase__icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: translateY(15px);
+    opacity: 0;
+    transition: all .5s;
+}
+.showCase__overlay .showCase__text{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    transform: translateY(15px);
+    opacity: 0;
+    transition: all .5s;
+}
+.showCase__overlay .showCase__icon i{
+    display: block;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 20px;
+    transition: .5s;
+}
+.showCase__overlay .showCase__icon i:hover{
+    background-color: black;
+    color: white;
+}
+.showCase__overlay .showCase__text p{
+    color: #d0c7c8;
+    font-size: 14px;
+}
+.showCase__overlay .showCase__text h2{
+    font-size: 16px;
+    color: white;
+}
+.showCase__overlay:hover{
+    opacity: 1;
+}
+.showCase__overlay:hover .showCase__icon{
+    transform: translateY(0);
+    opacity: 1;
+}
+.showCase__overlay:hover .showCase__text{
+    transform: translateY(0);
+    opacity: 1;
+}
+.showCase--rotate:hover{
+    transform: rotate(1440deg);
+}
+
+.showCase--scale{
+    transform: scale(0.1);
+}
+
+
+.showCase--scale:hover{
+    transform: scale(1);
+}
+.showCase__icon a{
+    text-decoration: none;
+    color: black;
+}
+.blog{
+    background-color: rgb(158, 156, 156);
+    padding: 70px;
+}
+.blog__title{
+    text-align: center;
+    
+}
+.blog__title  p:first-child {
+    color: #e62b4a;
+    font-size: 0.7rem;
+}
+
+.blog__title h1 {
+    font-size: 1.9rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.blog__title  p:last-child {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+    margin-bottom: 20px;
+}
+.blog__content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+}
+.blog__item img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(40%) contrast(50%);
+    transition: all .4s;
+}
+.blog__item:hover img{
+    filter: grayscale(0) contrast(100%);
+    transform: scale(1.2);
+}
+.blog__item{
+    position: relative;
+    overflow: hidden;/* ẩn những nội dung bị tràn ra ngoài*/
+}
+.blog__text{
+    position: absolute;
+    top: 0 ;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+.blog__metro1{
+    grid-column: 1 / span 2;/* bắt đàu từ line 1 va gom 2 cột*/
+    grid-row: 1 / span 2 ;
+}
+.blog__metro10{
+    grid-column: 3 / span 2;
+    grid-row: 3 / span 2;
+
+}
+/* END SHOWCASE */
+@keyframes arrowDown{
+    from{
+        opacity:1 ;
+        transform: translateY(0);
+    }
+    to{
+        opacity: 0;
+        transform: translateY(35px);
+
+    }
+}
+.carousel__scroll i{
+    animation: arrowDown 1s linear 0s infinite ;
+}
+
+
+
+
